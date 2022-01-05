@@ -3,7 +3,7 @@ import Amplify from "aws-amplify";
 import awsExports from "../aws-exports";
 
 import store from "../store";
-import { setUser } from "../store/slices/user/userSlice";
+import { setUser, logoutUser } from "../store/slices/user/userSlice";
 
 async function configureAmplify() {
     Amplify.configure(awsExports);
@@ -21,7 +21,7 @@ async function configureAmplify() {
         
     }
     catch {
-        console.log("No logged in user");
+        store.dispatch(logoutUser());
     }
 }
 

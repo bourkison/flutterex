@@ -9,7 +9,11 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Spinner from 'react-bootstrap/Spinner';
 
-export default function LoginForm() {
+interface LoginFormProps {
+    closeModal: Function
+}
+
+export default function LoginForm({ closeModal }: LoginFormProps) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [isLoading, setIsLoading] = useState(false);
@@ -35,6 +39,8 @@ export default function LoginForm() {
                 email: user.attributes.email,
                 dob: user.attributes.birthdate
             }));
+
+            closeModal();
         }
         catch (err) {
             console.error(err);

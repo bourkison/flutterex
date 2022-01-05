@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 import store from "../../store";
 import { connect } from "react-redux";
-import { setUser, logoutUser } from "../../store/slices/user/userSlice";
+import { logoutUser } from "../../store/slices/user/userSlice";
 
 import Modal from "react-bootstrap/Modal";
 
@@ -48,6 +48,7 @@ class Home extends React.Component<HomeProps, HomeState> {
         try {
             await Auth.signOut();
             store.dispatch(logoutUser());
+            this.setState({ loginModal: false, signUpModal: false });
         }
         catch(err) {
             console.error(err);
@@ -78,7 +79,7 @@ class Home extends React.Component<HomeProps, HomeState> {
                             <Modal.Title>Login</Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
-                            <LoginForm />
+                            <LoginForm closeModal={ () => { this.setState({ loginModal: false }) } } />
                         </Modal.Body>
                     </Modal>
 
