@@ -1,5 +1,3 @@
-// NOT CURRENTLY USING BUT MAY USE LATER. TAKEN FROM REACT-REDUX DOCS.
-
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import type { RootState, AppDispatch } from './'
 

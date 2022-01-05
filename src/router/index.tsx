@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "../views/Home";
+import NotFound from "../views/NotFound";
 
 const allRoutes = [
     {
@@ -8,12 +9,25 @@ const allRoutes = [
         element: <Home />,
         title: "Home",
         key: "home"
+    },
+    {
+        path: "*",
+        element: <NotFound />,
+        title: "404",
+        key: "404"
     }
 ]
 
 function AppRouter() {
     const currentLocation = useLocation();
-    const currentTitle = allRoutes.find(route => { return route.path === currentLocation.pathname }).title;
+    let currentTitle: string;
+    try {
+        currentTitle = allRoutes.find(route => { return route.path === currentLocation.pathname }).title;
+    }
+    catch (err) {
+        currentTitle = "404";
+    }
+
     useEffect(() => {
         document.title = "FlutterEx | " + currentTitle;
     })
@@ -25,6 +39,7 @@ function AppRouter() {
             }) }
         </Routes>
     );
+
 }
 
 export default AppRouter;

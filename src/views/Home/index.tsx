@@ -3,6 +3,7 @@ import "./style.css";
 
 import LoginForm from "../../components/User/LoginForm";
 import SignUpForm from "../../components/User/SignUpForm";
+import NBAFeed from "../../components/Games/NBA/NBAFeed";
 
 import { Auth } from "aws-amplify";
 import { Link } from "react-router-dom";
@@ -39,9 +40,7 @@ class Home extends React.Component<HomeProps, HomeState> {
             this.setState({
                 isLoading: false
             });
-
-            console.log(store.getState());
-        }, 3000);
+        }, 300);
     }
 
     async logout() {
@@ -56,8 +55,6 @@ class Home extends React.Component<HomeProps, HomeState> {
     }
 
     render() {
-        console.log("PROPS:", this.props);
-
         if (this.state.isLoading) {
             return <div className="loadingHomeCont">Loading...</div>
         } else if (this.props.loggedIn) {
@@ -66,6 +63,9 @@ class Home extends React.Component<HomeProps, HomeState> {
             return (
                 <div className="loadedLoggedInHomeCont">
                     <div>Hello { name }. Enjoy your punt. Click <Link to="#" onClick={this.logout}>here</Link> to log out.</div>
+                    <div className="mt-2">
+                        <NBAFeed />
+                    </div>
                 </div>
             )
         } else {
@@ -98,7 +98,6 @@ class Home extends React.Component<HomeProps, HomeState> {
 }
 
 function mapStateToProps(state: any, ownProps: any) {
-    console.log("Map state to props:", state, ownProps);
     return {
         loggedIn: state.user.loggedIn
     }

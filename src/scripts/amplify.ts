@@ -25,4 +25,9 @@ async function configureAmplify() {
     }
 }
 
+export async function fetchJwtToken() {
+    return (await Amplify.Auth.currentSession()).getIdToken().getJwtToken();
+}
+
+
 export default configureAmplify 

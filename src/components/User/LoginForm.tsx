@@ -13,7 +13,7 @@ interface LoginFormProps {
     closeModal: Function
 }
 
-export default function LoginForm({ closeModal }: LoginFormProps) {
+export default function LoginForm(props: LoginFormProps) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [isLoading, setIsLoading] = useState(false);
@@ -40,7 +40,7 @@ export default function LoginForm({ closeModal }: LoginFormProps) {
                 dob: user.attributes.birthdate
             }));
 
-            closeModal();
+            props.closeModal();
         }
         catch (err) {
             console.error(err);

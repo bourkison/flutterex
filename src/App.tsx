@@ -3,6 +3,7 @@ import AppRouter from "./router";
 import "./App.css";
 
 import { connect, useDispatch } from "react-redux";
+import { useAppSelector } from "./store/hooks";
 import { logoutUser } from "./store/slices/user/userSlice";
 
 import { Auth } from "aws-amplify";
@@ -29,8 +30,8 @@ function App(props: AppProps) {
     const [signUpModal, setSignUpModal] = useState(false);
     const dispatch = useDispatch();
 
-    const username = "bourkison";
-
+    const username = useAppSelector(state => state.user.cogData && state.user.cogData.username );
+        
     async function logout() {
         try {
             await Auth.signOut();

@@ -9,11 +9,18 @@
       "UnauthRoleName": "amplify-flutterex-dev-12216-unauthRole",
       "StackName": "amplify-flutterex-dev-12216",
       "StackId": "arn:aws:cloudformation:ap-southeast-2:586865842618:stack/amplify-flutterex-dev-12216/bc97c760-6d69-11ec-8236-060aab5ff006",
-      "AmplifyAppId": "dxd13wc89yxnd"
+      "AmplifyAppId": "dxd13wc89yxnd",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-flutterex-dev-12216-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "auth": {
         "flutterexauth": {}
+      },
+      "function": {
+        "flutterexGamesHandler": {
+          "deploymentBucketName": "amplify-flutterex-dev-12216-deployment",
+          "s3Key": "amplify-builds/flutterexGamesHandler-633177796541366d4168-build.zip"
+        }
       }
     }
   }

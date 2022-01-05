@@ -1,46 +1,11 @@
-# Getting Started with Create React App
+# FlutterEx
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
+FlutterEx is a peer-to-peer punting service that is designed to take bookmakers out of the gambling equation. Rather than betting against a bookmaker, users can put contracts out onto the exchange that other users can then take on. This provides a more free market for betters (without manipulation from bookmakers), arguably making the system more fair.
 
-## Available Scripts
+## Example
+Let's say I believe that the Lakers are going to defeat the Warriors in an upcoming game. I am so confident of this that I would be willing to put $10 down, seeking a return of at least $15 (inclusive of initial investment).
+This would then create a contract on the site for the Warriors to win that any user could pick up, requiring a $5 investment for the entire $15 return.
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Why?
+This thought occured to me while watching a [video](https://www.youtube.com/watch?v=efBG1YfuNhg) on the Hong Kong Jockey Club, which works similarly to a stock exchange. Due to the heavy cost of gambling licenses as well as me having no experience in gambling, this project will never see the light of day. I also have no clue if this already exists/has existed in the past, rather it has been a project for me to learn Typescript and React; two frameworks that I have not worked with before.
