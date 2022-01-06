@@ -31,19 +31,11 @@ class Home extends React.Component<HomeProps, HomeState> {
     constructor (props: HomeProps) {
         super(props);
         this.state = {
-            isLoading: true,
+            isLoading: false,
             signUpModal: false,
             loginModal: false
         }
         this.logout = this.logout.bind(this);
-    }
-
-    componentDidMount() {
-        window.setTimeout(() => {
-            this.setState({
-                isLoading: false
-            });
-        }, 300);
     }
 
     async logout() {

@@ -9,3 +9,10 @@ This would then create a contract on the site for the Warriors to win that any u
 
 ## Why?
 This thought occured to me while watching a [video](https://www.youtube.com/watch?v=efBG1YfuNhg) on the Hong Kong Jockey Club, which works similarly to a stock exchange. Due to the heavy cost of gambling licenses as well as me having no experience in gambling, this project will never see the light of day. I also have no clue if this already exists/has existed in the past, rather it has been a project for me to learn Typescript and React; two frameworks that I have not worked with before.
+
+## Tools Used
+This application uses:
+* React
+* AWS Amplify
+* MongoDB
+* Typescript

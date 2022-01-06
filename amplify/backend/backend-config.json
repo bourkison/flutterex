@@ -38,6 +38,25 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "flutterexContractHandler": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "flutterexmongoosemodels",
+          "attributes": [
+            "Arn"
+          ]
+        }
+      ]
+    },
+    "flutterexmongoosemodels": {
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer",
+      "build": true
     }
   },
   "api": {
@@ -48,6 +67,14 @@
         {
           "category": "function",
           "resourceName": "flutterexGamesHandler",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "flutterexContractHandler",
           "attributes": [
             "Name",
             "Arn"

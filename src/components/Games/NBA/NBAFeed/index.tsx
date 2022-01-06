@@ -12,7 +12,7 @@ import Form from "react-bootstrap/Form";
 interface NBAFeedProps {}
 interface NBAFeedState {
     isLoading: boolean
-    games: Array<object>
+    games: Array<any>
     selectedDate: string
 }
 
@@ -59,7 +59,7 @@ class NBAFeed extends React.Component<NBAFeedProps, NBAFeedState> {
         }
     }
 
-    updateDate(e: any) {
+    updateDate(e: React.ChangeEvent<HTMLInputElement>) {
         this.setState({ selectedDate: dayjs(e.target.value).format("YYYY-MM-DD") });
         this.pullData();
     }
@@ -75,7 +75,7 @@ class NBAFeed extends React.Component<NBAFeedProps, NBAFeedState> {
         } else if (this.state.games.length) {
             formContent = (
                 <div className="mb-4">
-                    { this.state.games.map(game => <div className="mt-4"><NBAGameComponent game={game} /></div> ) }
+                    { this.state.games.map(game => <div className="mt-4" key={game.id}><NBAGameComponent game={game} /></div> ) }
                 </div>
             );
         } else {

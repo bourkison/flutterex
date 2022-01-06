@@ -20,6 +20,15 @@
         "flutterexGamesHandler": {
           "deploymentBucketName": "amplify-flutterex-dev-12216-deployment",
           "s3Key": "amplify-builds/flutterexGamesHandler-633177796541366d4168-build.zip"
+        },
+        "flutterexContractHandler": {
+          "secretsPathAmplifyAppId": "dxd13wc89yxnd",
+          "deploymentBucketName": "amplify-flutterex-dev-12216-deployment",
+          "s3Key": "amplify-builds/flutterexContractHandler-69744d767a3177424669-build.zip"
+        },
+        "flutterexmongoosemodels": {
+          "deploymentBucketName": "amplify-flutterex-dev-12216-deployment",
+          "s3Key": "amplify-builds/flutterexmongoosemodels-LambdaLayerVersioncafd3003-build.zip"
         }
       }
     }

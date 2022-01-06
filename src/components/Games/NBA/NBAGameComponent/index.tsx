@@ -109,9 +109,9 @@ export default function NBAGameComponent(props: NBAGameComponentProps) {
             <Card>
                 <Card.Body>
                     <Card.Title>{ props.game.shortName } | { date }</Card.Title>
-                    <Card.Text>
+                    <div>
                         { cardContent }
-                    </Card.Text>
+                    </div>
                 </Card.Body>
             </Card>
         </div>

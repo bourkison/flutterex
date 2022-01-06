@@ -13,6 +13,19 @@
           "delete"
         ]
       }
+    },
+    "/contracts": {
+      "name": "/contracts",
+      "lambdaFunction": "flutterexContractHandler",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
     }
   }
 }

@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
+
 import Home from "../views/Home";
+import ContractsNew from "../views/Contracts/ContractsNew";
 import NotFound from "../views/NotFound";
 
 const allRoutes = [
@@ -9,6 +11,12 @@ const allRoutes = [
         element: <Home />,
         title: "Home",
         key: "home"
+    },
+    {
+        path: "/contracts/new",
+        element: <ContractsNew />,
+        title: "New Contract",
+        key: "contractsnew"
     },
     {
         path: "*",
