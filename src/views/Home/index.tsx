@@ -12,7 +12,10 @@ import store from "../../store";
 import { connect } from "react-redux";
 import { logoutUser } from "../../store/slices/user/userSlice";
 
+import Container from "react-bootstrap/Container";
 import Modal from "react-bootstrap/Modal";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 interface HomeProps {
     loggedIn: boolean
@@ -62,35 +65,52 @@ class Home extends React.Component<HomeProps, HomeState> {
 
             return (
                 <div className="loadedLoggedInHomeCont">
-                    <div>Hello { name }. Enjoy your punt. Click <Link to="#" onClick={this.logout}>here</Link> to log out.</div>
-                    <div className="mt-2">
-                        <NBAFeed />
-                    </div>
+                    <Container>
+                        <Row>
+                            <Col></Col>
+                            <Col xs={8} md={6}>
+                                <div>Hello { name }. Enjoy your punt. Click <Link to="#" onClick={this.logout}>here</Link> to log out.</div>
+                                <div className="mt-2">
+                                    <NBAFeed />
+                                </div>
+                            </Col>
+                            <Col></Col>
+                        </Row>
+                    </Container>
                 </div>
             )
         } else {
             return (
                 <div className="loadedLoggedOutHomeCont">
-                    <div>
-                        You are not logged in. <Link to="#" onClick={ () => { this.setState({ loginModal: true })} }>Login</Link> or <Link to="#" onClick={ () => { this.setState({ signUpModal: true }) } }>Sign Up</Link> to get started.
-                    </div>
-                    <Modal show={this.state.loginModal} onHide={ () => { this.setState({ loginModal: false }) } }>
-                        <Modal.Header closeButton>
-                            <Modal.Title>Login</Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body>
-                            <LoginForm closeModal={ () => { this.setState({ loginModal: false }) } } />
-                        </Modal.Body>
-                    </Modal>
+                    <Container>
+                        <Row>
+                            <Col>
+                            </Col>
+                            <Col xs={8} sm={6} md={4}>
+                                <div>
+                                    You are not logged in. <Link to="#" onClick={ () => { this.setState({ loginModal: true })} }>Login</Link> or <Link to="#" onClick={ () => { this.setState({ signUpModal: true }) } }>Sign Up</Link> to get started.
+                                </div>
+                                <Modal show={this.state.loginModal} onHide={ () => { this.setState({ loginModal: false }) } }>
+                                    <Modal.Header closeButton>
+                                        <Modal.Title>Login</Modal.Title>
+                                    </Modal.Header>
+                                    <Modal.Body>
+                                        <LoginForm closeModal={ () => { this.setState({ loginModal: false }) } } />
+                                    </Modal.Body>
+                                </Modal>
 
-                    <Modal show={this.state.signUpModal} onHide={ () => { this.setState({ signUpModal: false }) } }>
-                        <Modal.Header closeButton>
-                            <Modal.Title>Sign Up</Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body>
-                            <SignUpForm />
-                        </Modal.Body>
-                    </Modal>
+                                <Modal show={this.state.signUpModal} onHide={ () => { this.setState({ signUpModal: false }) } }>
+                                    <Modal.Header closeButton>
+                                        <Modal.Title>Sign Up</Modal.Title>
+                                    </Modal.Header>
+                                    <Modal.Body>
+                                        <SignUpForm />
+                                    </Modal.Body>
+                                </Modal>
+                            </Col>
+                            <Col></Col>
+                        </Row>
+                    </Container>
                 </div>
             );
         }

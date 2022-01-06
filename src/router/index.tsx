@@ -29,7 +29,7 @@ function AppRouter() {
     }
 
     useEffect(() => {
-        document.title = "FlutterEx | " + currentTitle;
+        document.title = "FlutterEx · " + currentTitle;
     })
 
     return (
